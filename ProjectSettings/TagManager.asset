@@ -10,6 +10,7 @@ TagManager:
   - UI
   - Unpassable
   - PlayerRange
+  - RestrictedMessage
   layers:
   - Default
   - TransparentFX

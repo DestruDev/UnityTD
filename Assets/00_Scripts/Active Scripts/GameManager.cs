@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
     public GameObject gameWonScreen;
     [SerializeField] public List<Image> uiBlockerImages;
     public TMP_Dropdown displayModeDropdown;
+    public GameObject restrictedMessage;
     private void Awake() {
         if (Instance == null) {
             Instance = this;

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TowerPlacement : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class TowerPlacement : MonoBehaviour
     private PlayerRange playerRange;
     [HideInInspector] public bool inPlayerInteractRange = false;
     private int restrictedOverlapCount = 0;
+    public GameManager gameManager;
+
 
     void Awake()
     {   
@@ -27,7 +30,21 @@ public class TowerPlacement : MonoBehaviour
         rangeCollider.enabled = false;
 
         uiBlockerImages = GameManager.Instance.uiBlockerImages;
+        /*
+        if (restrictedMessage == null) {
+            restrictedMessage = GameObject.FindWithTag("RestrictedMessage");
+        }
+
+        if (restrictedMessage != null) {
+            restrictedMessage.SetActive(false); // Ensure it starts hidden, just in case
+        }
+        */
+
+        gameManager = GameManager.Instance;
     }
+
+  
+
 
     void Update()
     {
@@ -39,6 +56,15 @@ public class TowerPlacement : MonoBehaviour
 
             UpdateRestrictionState();
             
+        }
+        /*
+        if (isPlacing && restrictedMessage != null) {
+            restrictedMessage.SetActive(isRestricted);
+        }
+        */
+
+        if (isPlacing && gameManager.restrictedMessage != null) {
+            gameManager.restrictedMessage.SetActive(isRestricted);
         }
         // Places the tower
         if (Input.GetMouseButtonDown(0) && !isRestricted && GameStats.Instance.playerGold >= tower.cost) {
