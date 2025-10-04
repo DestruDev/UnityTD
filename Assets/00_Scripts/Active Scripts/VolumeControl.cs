@@ -9,7 +9,7 @@ public class VolumeControl : MonoBehaviour {
     private const string volumePrefKey = "SavedMasterVolume";
 
     private void Start() {
-        float savedVolume = PlayerPrefs.GetFloat(volumePrefKey, 100f);
+        float savedVolume = PlayerPrefs.GetFloat(volumePrefKey, 0f);
         SetVolume(savedVolume); // Set initial volume and sync everything
     }
 
