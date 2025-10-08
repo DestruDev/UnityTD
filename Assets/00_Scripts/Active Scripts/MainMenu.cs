@@ -52,6 +52,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void Awake() {
+        //default active states
         optionsPanel.SetActive(false);
         optionsGameplay.SetActive(true);
         optionsVideo.SetActive(false);
@@ -224,7 +225,7 @@ public class MainMenu : MonoBehaviour {
             "\t\u2022 New map layout using a 32x32 tilemap.\n" +
             "\t\u2022 Tower placement restricted via customizable tilemap grid.\n" +
             "\t\u2022 Enemy waypoint object size now snaps to grid.\n" +
-            "\t\u2022 Towers can only be placed within the playerÅfs interact range.\n" +
+            "\t\u2022 Towers can only be placed within the playerÔøΩfs interact range.\n" +
             "\t\u2022 Replaced top-right close (X) button with bottom-right back button.\n" +
             "\t\u2022 Improved visuals for options menu tab layout.\n" +
             "\t\u2022 Automatic tile border tiling system added.\n" +

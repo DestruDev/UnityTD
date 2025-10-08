@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
         } else {
             Destroy(gameObject);
         }
-
+        //default active states
         settingsPanel.SetActive(false);
         gameOverScreen.SetActive(false);
         

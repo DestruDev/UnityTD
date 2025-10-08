@@ -28,6 +28,7 @@ public class Tower : MonoBehaviour {
     private AudioSource audioSource;
 
     void Awake() {
+        //start with the cost of the tower
         totalInvestedCost = cost;
         audioSource = GetComponent<AudioSource>();
     }

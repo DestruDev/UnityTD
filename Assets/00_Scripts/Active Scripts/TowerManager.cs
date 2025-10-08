@@ -58,6 +58,7 @@ public class TowerManager : MonoBehaviour {
 
         //Select the tower with Left Click
         if (!placingTower && Input.GetMouseButtonDown(0)) {
+            //raycast to the mouse position
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100f, towerLayer);
             if (hit.collider != null) {
                 isUpgrading = true;
@@ -103,7 +104,7 @@ public class TowerManager : MonoBehaviour {
 
         GameObject towerPrefab = towers[towerIndex].prefab;
         int cost = towerPrefab.GetComponent<Tower>().cost;
-
+        //if player has enough gold, instantiate the tower
         if (GameStats.Instance.playerGold >= cost) {
             placingTower = Instantiate(towerPrefab, towerContainer);
         } else {

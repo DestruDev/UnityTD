@@ -95,7 +95,7 @@ public class GameStats : MonoBehaviour
     }
     #endregion
     public int SetDifficulty(int difficultyLevel) {
-
+        //set the difficulty and lives based on the difficulty level
         switch (difficultyLevel) {
             case 1:
                 currentDifficulty = GameDifficulty.Beginner;

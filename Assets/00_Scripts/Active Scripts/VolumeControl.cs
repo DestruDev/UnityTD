@@ -3,8 +3,8 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class VolumeControl : MonoBehaviour {
-    public AudioMixer audioMixer; // Drag in your Audio Mixer
-    public Slider volumeSlider;   // Drag in your UI slider
+    public AudioMixer audioMixer;
+    public Slider volumeSlider; 
 
     private const string volumePrefKey = "SavedMasterVolume";
 

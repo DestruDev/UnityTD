@@ -13,11 +13,11 @@ public class LoadingScene : MonoBehaviour
     }
 
     IEnumerator LoadSceneAsync(int sceneID) {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneID);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneID); //begins loading the scene in background
         LoadingScreen.SetActive(true);
         while (!operation.isDone) {
-            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
-            LoadingBarFill.fillAmount = progressValue;
+            float progressValue = Mathf.Clamp01(operation.progress / 0.9f); // Convert Unity's 0-0.9 progress to 0-1 range
+            LoadingBarFill.fillAmount = progressValue; // Update the progress bar visual
             yield return null;
         }
     }

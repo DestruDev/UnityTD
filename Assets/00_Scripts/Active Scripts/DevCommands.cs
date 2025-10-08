@@ -18,9 +18,6 @@ public class DevCommands : MonoBehaviour
         DevButtons();
     }
 
-    private void Start() {
-        
-    }
 
     #region Dev cheats
     private void DevButtons() {
@@ -32,7 +29,10 @@ public class DevCommands : MonoBehaviour
 
     private void ToggleTimeEffect(ref bool effectState, float timeScale) {
         effectState = !effectState;
-        Time.timeScale = effectState ? timeScale : 1f;
+        if (effectState) //speeds up game if effectState is true
+            Time.timeScale = timeScale;
+        else //normal time scale if effectState is false
+            Time.timeScale = 1f;
     }
 
     public void ToggleSlowMotion() => ToggleTimeEffect(ref isSlowedDown, 0.5f);
